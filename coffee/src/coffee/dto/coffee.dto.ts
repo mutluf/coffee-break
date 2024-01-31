@@ -1,12 +1,8 @@
-import { AutoMap } from "@automapper/classes";
 
 export class CoffeeDto{
-    @AutoMap()
-    int: string;
 
-    @AutoMap()
+    id: string;
+
     name: string;
 
-    @AutoMap()
-    recipe: string;
 }

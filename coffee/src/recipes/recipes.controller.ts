@@ -9,14 +9,14 @@ export class RecipesController {
     constructor(private readonly recipeService:RecipesService){}
 
 
-        @Get()
-        getAll():Promise<RecipeDto[]>{
-            return this.recipeService.getAllRecipes();
-        }
+        // @Get()
+        // getAll():Promise<RecipeDto[]>{
+        //     return this.recipeService.getAllRecipes();
+        // }
 
-        @Post()
-        create(@Body() recipeDto : CreateRecipeDto):Promise<RecipeDto>{
-            return this.recipeService.createRecipe(recipeDto);
-        }
+        // @Post()
+        // create(@Body() recipeDto : CreateRecipeDto):Promise<RecipeDto>{
+        //     return this.recipeService.createRecipe(recipeDto);
+        // }
     
 }
