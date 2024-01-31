@@ -5,13 +5,16 @@ import { Coffee } from 'src/coffee/model/coffee.entity';
 import { CoffeeMappingProfile } from './profile/automapper.profile';
 import { CoffeeRepository } from './coffee.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { RecipesModule } from 'src/recipes/recipes.module';
+import { Recipe } from 'src/recipes/model/recipe.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Coffee, CoffeeRepository])
+    TypeOrmModule.forFeature([Coffee, CoffeeRepository]),
+    RecipesModule
   ],
   exports:[CoffeeService],
-  providers: [CoffeeService,CoffeeMappingProfile,CoffeeRepository],
+  providers: [CoffeeService,CoffeeMappingProfile,CoffeeRepository,Recipe],
   controllers: [CoffeeController]
 })
 export class CoffeeModule {}

@@ -25,7 +25,7 @@ export class CoffeeService {
 
 
     async createCoffee(coffeeDto: CreateCoffeeDto): Promise<CoffeeDto> {
-        const entity: CreateCoffeeDto = await this.classMapper.mapAsync(coffeeDto, CreateCoffeeDto, Coffee)
+        const entity: Coffee = await this.classMapper.mapAsync(coffeeDto, CreateCoffeeDto, Coffee)
         const createdEntity: Coffee = this.coffeeRepository.create(entity);
         this.coffeeRepository.save(createdEntity);
 

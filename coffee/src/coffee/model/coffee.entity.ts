@@ -1,5 +1,6 @@
 import { AutoMap } from "@automapper/classes";
-import { Column, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
+import { Recipe } from "src/recipes/model/recipe.entity";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, Unique } from "typeorm";
 
 @Entity()
 export class Coffee{
@@ -11,4 +12,12 @@ export class Coffee{
     @Unique(["name"])
     @Column()
     name:string;
+
+    @AutoMap(()=>Recipe)
+    @OneToOne(() => Recipe, (recipe)=> recipe.coffee)
+    @JoinColumn()
+    recipe: Recipe
+
+    @AutoMap()
+    coffeeId:string;
 }

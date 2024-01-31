@@ -6,4 +6,7 @@ export class CoffeeDto{
 
     @AutoMap()
     name: string;
+
+    @AutoMap()
+    recipe: string;
 }
